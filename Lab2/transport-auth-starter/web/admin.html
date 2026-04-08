@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transport Auth — Admin</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <script defer src="/app.js"></script>
+</head>
+<body>
+  <div class="container" id="adminPage">
+    <div class="topbar">
+      <div>
+        <h1>Админ-панель</h1>
+        <div class="muted" id="meInfo"></div>
+      </div>
+      <div class="actions">
+        <button class="secondary" id="goTerminalBtn">Страница терминала</button>
+        <button class="secondary" id="refreshAllBtn">Обновить всё</button>
+        <button class="danger" id="logoutBtn">Выйти</button>
+      </div>
+    </div>
+
+    <div class="grid grid-2">
+      <section class="card">
+        <h2>Пользователи</h2>
+        <div class="row" style="margin-bottom: 12px;">
+          <input id="userLogin" placeholder="login" />
+          <input id="userName" placeholder="name" />
+          <input id="userPassword" placeholder="password" />
+          <label><input id="userIsAdmin" type="checkbox" /> admin</label>
+          <button id="createUserBtn" class="success">Создать</button>
+        </div>
+        <div class="table-wrap"><div id="usersTable"></div></div>
+      </section>
+
+      <section class="card">
+        <h2>Ключи</h2>
+        <div class="row" style="margin-bottom: 12px;">
+          <input id="keyName" placeholder="key_name" />
+          <input id="keyValue" placeholder="key_value" />
+          <button id="createKeyBtn" class="success">Создать</button>
+        </div>
+        <div class="table-wrap"><div id="keysTable"></div></div>
+      </section>
+
+      <section class="card">
+        <h2>Карты</h2>
+        <div class="row" style="margin-bottom: 12px;">
+          <input id="cardNo" placeholder="card_no" />
+          <input id="cardBalance" type="number" step="0.01" placeholder="balance" />
+          <input id="cardOwnerName" placeholder="owner_name" />
+          <input id="cardKeyId" type="number" placeholder="key_id" />
+          <label><input id="cardBlocked" type="checkbox" /> blocked</label>
+          <button id="createCardBtn" class="success">Создать</button>
+        </div>
+        <div class="table-wrap"><div id="cardsTable"></div></div>
+      </section>
+
+      <section class="card">
+        <h2>Терминалы</h2>
+        <div class="row" style="margin-bottom: 12px;">
+          <input id="terminalSerial" placeholder="serial_number" />
+          <input id="terminalAddress" placeholder="address" />
+          <input id="terminalDisplayName" placeholder="display_name" />
+          <button id="createTerminalBtn" class="success">Создать</button>
+        </div>
+        <div class="table-wrap"><div id="terminalsTable"></div></div>
+      </section>
+
+      <section class="card">
+        <h2>Транзакции</h2>
+        <div class="row" style="margin-bottom: 12px;">
+          <input id="transactionAmount" type="number" step="0.01" placeholder="amount" />
+          <input id="transactionCardId" type="number" placeholder="card_id" />
+          <input id="transactionTerminalId" type="number" placeholder="terminal_id" />
+          <button id="createTransactionBtn" class="success">Создать</button>
+        </div>
+        <div class="table-wrap"><div id="transactionsTable"></div></div>
+      </section>
+
+      <section class="card">
+        <h2>Быстрые ссылки</h2>
+        <div class="grid">
+          <button class="secondary" onclick="window.open('/api/v1/swagger/index.html', '_blank')">Открыть Swagger</button>
+          <button class="secondary" onclick="window.open('/api/v1/health', '_blank')">Открыть health</button>
+        </div>
+        <p class="muted" style="margin-top: 14px;">
+          В таблицах ниже есть кнопки <b>Изменить</b> и <b>Удалить</b>.
+        </p>
+      </section>
+    </div>
+  </div>
+</body>
+</html>

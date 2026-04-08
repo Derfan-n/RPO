@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transport Auth — Terminal</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <script defer src="/app.js"></script>
+</head>
+<body>
+  <div class="container" id="terminalPage">
+    <div class="topbar">
+      <div>
+        <h1>Страница терминала</h1>
+        <div class="muted" id="terminalMeInfo"></div>
+      </div>
+      <div class="actions">
+        <button class="secondary" id="goAdminBtn" style="display:none;">Админ-панель</button>
+        <button class="danger" id="terminalLogoutBtn">Выйти</button>
+      </div>
+    </div>
+
+    <div class="grid grid-2">
+      <section class="card">
+        <h2>Загрузка ключей</h2>
+        <button id="loadKeysBtn">Загрузить ключи</button>
+        <pre id="keysOutput">Нажми кнопку, чтобы загрузить ключи</pre>
+      </section>
+
+      <section class="card">
+        <h2>Авторизация транзакции</h2>
+        <form id="authorizeForm" class="grid">
+          <input id="authCardNo" placeholder="card_no" required />
+          <input id="authTerminalSerial" placeholder="terminal_serial" required />
+          <input id="authAmount" type="number" step="0.01" placeholder="amount" required />
+          <button type="submit">Авторизовать</button>
+        </form>
+        <pre id="authorizeOutput">Результат появится здесь</pre>
+      </section>
+    </div>
+  </div>
+</body>
+</html>

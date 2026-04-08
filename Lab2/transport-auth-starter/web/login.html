@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transport Auth — Login</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <script defer src="/app.js"></script>
+</head>
+<body>
+  <div class="auth-wrap">
+    <div class="card" style="width: 100%; max-width: 420px;">
+      <h1>Вход</h1>
+      <p class="muted">Логин в систему транспортных карт</p>
+
+      <form id="loginForm" class="grid">
+        <input id="login" type="text" placeholder="Логин" required />
+        <input id="password" type="password" placeholder="Пароль" required />
+        <button type="submit">Войти</button>
+      </form>
+
+      <div style="margin-top: 16px;" class="muted">
+        Тестовые пользователи:<br>
+        <b>admin / admin123</b><br>
+        <b>user / user123</b>
+      </div>
+
+      <div id="loginMessage"></div>
+    </div>
+  </div>
+</body>
+</html>
